@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Helvetica';
+    src: local('Helvetica Bold'), local('Helvetica-Bold'),
+        url('../fonts/helvetica_bold.woff') format('woff');
+        /*url('../fonts/Raleway-Bold.ttf') format('truetype');*/
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica';
+    src: local('Helvetica Regular'), local('Helvetica-Regular'),
+    url('../fonts/helvetica_regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Vasek';
+    src: local('Vasek Italic'), local('Vasek-Italic'), local('Vasek'),
+        url('../fonts/vasek_italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
