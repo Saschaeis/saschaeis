@@ -367,10 +367,10 @@ body {
     position: absolute;
     color: #fff;
     padding: 20px;
-    text-shadow: 1px 0 1px #000,
-    0 1px 1px rgba(0, 0, 0, 0.6),
-    -1px 0 1px rgba(0, 0, 0, 0.6),
-    0 -1px 1px rgba(0, 0, 0, 0.6);
+    /*text-shadow: 1px 0 1px #000,*/
+    /*0 1px 1px rgba(0, 0, 0, 0.6),*/
+    /*-1px 0 1px rgba(0, 0, 0, 0.6),*/
+    /*0 -1px 1px rgba(0, 0, 0, 0.6);*/
     z-index: 1;
     text-align: center;
     bottom: -100%;
@@ -562,10 +562,10 @@ body {
     margin-top: 25px;
     font-size: 1.2rem;
     color: #fff;
-    text-shadow: 1px 0 1px rgba(0, 0, 0, 0.6),
-    0 1px 1px rgba(0, 0, 0, 0.6),
-    -1px 0 1px rgba(0, 0, 0, 0.6),
-    0 -1px 1px rgba(0, 0, 0, 0.6);
+    /*text-shadow: 1px 0 1px rgba(0, 0, 0, 0.6),*/
+    /*0 1px 1px rgba(0, 0, 0, 0.6),*/
+    /*-1px 0 1px rgba(0, 0, 0, 0.6),*/
+    /*0 -1px 1px rgba(0, 0, 0, 0.6);*/
 }
 
 .welcome__features li {
@@ -578,10 +578,10 @@ body {
     color: #ffffff;
     font-size: 2.2rem;
     text-transform: uppercase;
-    text-shadow: 1px 0 1px rgba(0, 0, 0, 0.6),
-    0 1px 1px rgba(0, 0, 0, 0.6),
-    -1px 0 1px rgba(0, 0, 0, 0.6),
-    0 -1px 1px rgba(0, 0, 0, 0.6);
+    /*text-shadow: 1px 0 1px rgba(0, 0, 0, 0.6),*/
+    /*0 1px 1px rgba(0, 0, 0, 0.6),*/
+    /*-1px 0 1px rgba(0, 0, 0, 0.6),*/
+    /*0 -1px 1px rgba(0, 0, 0, 0.6);*/
 }
 @media(max-width: 900px){
     .welcome__features-title {
@@ -639,6 +639,7 @@ body {
 
 /*_____________________________________*/
 /*------------------about--------------*/
+
 .about__content {
     margin-top: 30px;
 }
@@ -723,10 +724,10 @@ body {
     text-align: center;
     padding: 30px 0 50px 0;
     font-size: 1.5rem;
-    text-shadow: 1px 0 1px rgba(0, 0, 0, 0.5),
-    0 1px 1px rgba(0, 0, 0, 0.5),
-    -1px 0 1px rgba(0, 0, 0, 0.5),
-    0 -1px 1px rgba(0, 0, 0, 0.5);
+    /*text-shadow: 1px 0 1px rgba(0, 0, 0, 0.5),*/
+    /*0 1px 1px rgba(0, 0, 0, 0.5),*/
+    /*-1px 0 1px rgba(0, 0, 0, 0.5),*/
+    /*0 -1px 1px rgba(0, 0, 0, 0.5);*/
 }
 
 .price--title {
@@ -776,7 +777,6 @@ body {
 .price__item {
     padding: 20px;
     border-radius: 1rem;
-    box-shadow: 2px 4px 10px 1px rgba(255, 255, 255, 0.1);
 }
 
 .price__item-group {
@@ -1255,4 +1255,9 @@ input:focus {
 }
 iframe{
     border-radius: 20px;
+}
+
+.about, .features, .course, .lesson-structure, .price,
+.attention, .questions, .feedbacks, .contact{
+    margin-top: 150px;
 }

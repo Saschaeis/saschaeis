@@ -6,12 +6,14 @@ let content = document.querySelector('.content');
 let contentMarginTop = window.getComputedStyle(content, null).getPropertyValue("margin-top");
 let faq = document.querySelector('.faq');
 let form = document.getElementById("form");
+const burger = document.querySelector('.burger');
 window.addEventListener('load', function () {
     atTopPosition();
-    document.querySelector('.burger').addEventListener('click', function() {
+    burger.addEventListener('click', function () {
         this.classList.toggle('active');
-        document.querySelector('.menu').classList.toggle('opened');
+        menu.classList.toggle('opened');
     })
+
     delegate(faq, '.ask', 'click', function () {
         let answer = this.closest('.item').querySelector('.answer');
         let cl = answer.classList;
@@ -39,11 +41,15 @@ window.addEventListener('load', function () {
     });
     delegate(menu, 'a', 'click', function (e) {
         e.preventDefault();
-
         let target = document.querySelector(this.hash); // hash как id селектор
-
         scrollToElem(target);
-        setActiveMenuItem(menu, this);
+        //setActiveMenuItem(menu, this);
+    });
+    const buttonsContainer = document.querySelector('.welcome__text-info-buttons');
+    delegate(buttonsContainer, '.button', 'click', function (e) {
+        e.preventDefault();
+        let target = document.querySelector(this.hash);
+        scrollToElem(target);
     });
 
     let startHash = window.location.hash;
@@ -78,7 +84,7 @@ window.addEventListener('load', function () {
     })
     let contactProcessing = JSON.parse(localStorage.getItem("contactIsSent"));
     let timeProcessing = JSON.parse(localStorage.getItem("time"));
-    if(contactProcessing && timeProcessing + (3600 * 1000) > new Date().getTime()){
+    if (contactProcessing && timeProcessing + (3600 * 1000) > new Date().getTime()) {
         form.innerHTML = `
             <p class="formSent">Заявка отправлена и обрабатывается. В ближайшее время с Вами свяжутся.</p>
             `;
@@ -88,24 +94,33 @@ window.addEventListener('load', function () {
         document.querySelector('#sendBtn').addEventListener('click', sendContact);
     }
 });
+
 function setActiveMenuItem(menu, item) {
     menu.querySelectorAll('a').forEach(link => link.classList.remove('menu__link-active'));
     item.classList.add('menu__link-active');
 }
+
 function scrollToElem(el) {
     let elementYposition = el.getBoundingClientRect().top; // IE и Edge: не поддерживают x/y. можно использовать top/left, т.к. это всегда одно и то же при положительных width/height.
     let top = (elementYposition + window.scrollY) - 90; // Number(parentBoxMarginTop.replace(/[^0-9]/g, '')
     scrollToY(top);
+    if (burger.classList.contains('active') && menu.classList.contains('opened')) {
+        burger.classList.toggle('active');
+        menu.classList.toggle('opened');
+    }
 }
+
 function scrollToY(top) {
     window.scrollTo({
         top,
         behavior: "smooth"
     });
 }
+
 function getElemPixelHeight(element) {
     return element.getBoundingClientRect().height + 'px';
 }
+
 function delegate(box, selector, eventName, handler) {
     box.addEventListener(eventName, function (e) {
         let elem = e.target.closest(selector);
@@ -114,13 +129,14 @@ function delegate(box, selector, eventName, handler) {
         }
     });
 }
+
 let sendContact = () => {
     let nameField = document.querySelector('#name').value;
     let regular = /^\+375\d{2}\d{7}/;
     let phoneField = document.querySelector('#phone').value;
 
-    if(nameField.trim().length > 1 && nameField.trim().length < 25){
-        if(phoneField.trim().length !== 0 && regular.test(phoneField) && phoneField.length === 13){
+    if (nameField.trim().length > 1 && nameField.trim().length < 25) {
+        if (phoneField.trim().length !== 0 && regular.test(phoneField) && phoneField.length === 13) {
             const TOKEN = '6113579328:AAHZY13MenQYfRSkaqM901gzdN7DHpTgHrI';
             const CHAT_ID = '-1001829262127';
             const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
@@ -155,8 +171,9 @@ let sendContact = () => {
         window.alert('Проверьте, верно ли введёно имя');
     }
 };
+
 function atTopPosition() {
-    if (window.scrollY > 10){
+    if (window.scrollY > 10) {
         menu.classList.remove("AtTop");
     } else {
         menu.classList.add("AtTop");
