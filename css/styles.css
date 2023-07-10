@@ -47,7 +47,6 @@ body {
     color: #484848;
     border-radius: 0.4rem;
     padding: 8px 23px 10px 23px;
-    border: 1px solid rgba(95, 99, 104, 0.6);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2);
     transition: box-shadow 0.1s, background-color ease 0.3s;
 }
@@ -155,7 +154,7 @@ body {
         font-size: 1.2rem;
     }
     .menu-logo img {
-        width: 15px;
+        width: 30px;
     }
     .menu-elements {
         flex-direction: column;
@@ -198,7 +197,6 @@ body {
 .menu-icon-phone {
     position: relative;
     background-color: #171717;
-    border: 1px solid #171717;
     color: #fff;
     text-decoration: none;
     display: flex;
@@ -208,7 +206,6 @@ body {
     transition: all .25s;
 }
 .menu-icon-phone:hover {
-    border: 1px solid #a9a9a9;
     background-color: #c0c0c0;
 }
 
@@ -1152,7 +1149,7 @@ input {
     padding: 7px 5px 7px 10px;
     outline: none;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: none;
     width: 100%;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2);
 }
@@ -1160,10 +1157,6 @@ input {
 label {
     color: #fff;
     margin-bottom: 10px;
-}
-
-input:focus {
-    border: 1px solid #00ff55;
 }
 
 .phone-label {
@@ -1176,7 +1169,6 @@ input:focus {
     font-size: 1.1rem;
     cursor: pointer;
     border-radius: 15px;
-    border: 1px solid #171717;
     background: #171717;
     color: #fff;
     transition: all 0.2s;
@@ -1185,7 +1177,6 @@ input:focus {
 
 #sendBtn:hover {
     background: #9a9a9a;
-    border: 1px solid #595959;
 }
 
 /*---------------------------*/
