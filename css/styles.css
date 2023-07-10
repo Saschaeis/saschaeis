@@ -160,6 +160,10 @@ body {
     .menu-elements {
         flex-direction: column;
     }
+    .menu-icon-phone{
+        margin-top: 45px;
+
+    }
 }
 
 
@@ -192,6 +196,7 @@ body {
     /*border-bottom: 2px dotted #8a8a8a; !*  #b6d9fa   *!*/
 }
 .menu-icon-phone {
+    position: relative;
     background-color: #171717;
     border: 1px solid #171717;
     color: #fff;
@@ -1329,4 +1334,42 @@ iframe{
 .text-icon-smile{
     max-width: 24px;
     top: 3px
+}
+@keyframes pulse{
+    100%{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+.menu-icon-phone{
+    animation: radial-pulse 1s infinite;
+}
+
+/*----------------------------------*/
+/*    pulse effect   */
+
+.pulse:before,
+.pulse:after{
+    content: "";
+    position: absolute;
+    left:0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(23, 23, 23, 0.4);
+    border-radius: 5px;
+    z-index: -1;
+    opacity: 0.7;
+}
+.pulse:before{
+    animation: pulse 2s ease-out infinite;
+}
+.pulse:after{
+    animation: pulse 2s 1.7s ease-out infinite;
+}
+@keyframes pulse{
+    100%{
+        transform: scale(1.5);
+        opacity: 0;
+    }
 }
