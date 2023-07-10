@@ -1,5 +1,5 @@
 let menu = document.querySelector('.menu');
-let menuItems = menu.querySelectorAll('a');
+let menuItems = menu.querySelectorAll('.menu__link');
 let upBtn = document.querySelector('.upBtn');
 let headers = document.querySelectorAll('h2');
 let content = document.querySelector('.content');
@@ -39,7 +39,7 @@ window.addEventListener('load', function () {
             ], {duration: 100});
         }
     });
-    delegate(menu, 'a', 'click', function (e) {
+    delegate(menu, '.menu__link', 'click', function (e) {
         e.preventDefault();
         let target = document.querySelector(this.hash); // hash как id селектор
         scrollToElem(target);
@@ -96,7 +96,7 @@ window.addEventListener('load', function () {
 });
 
 function setActiveMenuItem(menu, item) {
-    menu.querySelectorAll('a').forEach(link => link.classList.remove('menu__link-active'));
+    menu.querySelectorAll('.menu__link').forEach(link => link.classList.remove('menu__link-active'));
     item.classList.add('menu__link-active');
 }
 
