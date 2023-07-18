@@ -225,6 +225,8 @@ a.menu-icon-phone--header{
     color: #fff;
     text-decoration: none;
     display: flex;
+    align-items: center;
+    vertical-align: middle;
     font-size: 1.1rem;
     border-radius: 6px;
     padding: 3px 8px 4px 5px;
