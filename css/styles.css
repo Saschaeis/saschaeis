@@ -161,6 +161,9 @@ body {
     margin-right: 5px;
     animation: rotate 30s infinite linear;
 }
+a.menu-icon-phone--header{
+    display: none;
+}
 @media(max-width: 900px){
     .menu-logo{
         position: absolute;
@@ -177,7 +180,12 @@ body {
     }
     .menu-icon-phone{
         margin-top: 45px;
-
+    }
+    a.menu-icon-phone--header{
+        display: inline-flex;
+        padding: 5px 10px;
+        margin-top: 15px;
+        border-radius: 8px;
     }
 }
 
