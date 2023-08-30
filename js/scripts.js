@@ -179,3 +179,30 @@ function atTopPosition() {
         menu.classList.add("AtTop");
     }
 }
+//---tabs
+let tab = function() {
+    let tabNavItem = document.querySelectorAll('.tabs__nav-item'),
+        tabContentItem = document.querySelectorAll('.tabs__content-item'),
+        tabActive;
+    tabNavItem.forEach(item => {
+        item.addEventListener('click', selectTabNav)
+    });
+    function selectTabNav() {
+        tabNavItem.forEach(item => {
+            item.classList.remove('is-active');
+        });
+        this.classList.add('is-active');
+        tabActive = this.getAttribute('data-tab-name');
+        selectTabContent(tabActive);
+    }
+    function selectTabContent(tabActive) {
+        tabContentItem.forEach(item =>{
+            if(item.classList.contains(tabActive)){
+                item.classList.add('is-active');
+            } else {
+                item.classList.remove('is-active');
+            }
+        })
+    }
+};
+tab();
